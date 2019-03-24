@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>ms | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ms">
+<meta name="keywords" content="ms">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ms">
+<meta property="og:url" content="xiumao.coding.me/2018/04/02/ms/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ms">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-24T13:25:12.341Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ms">
+<meta name="twitter:description" content="ms">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="xiumao.coding.me"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ms" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/02/ms/" class="article-date">
+  <time datetime="2018-04-02T04:28:54.000Z" itemprop="datePublished">2018-04-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ms
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ms</p>
+<a id="more"></a>
+<p>###</p>
+<p>你完成的最有成就的功能是？</p>
+<p>高并发？</p>
+<pre><code>Webserver (Nginx)  结合LVS很容易实现负载均衡 静态资源地址使用商用的云存储服务
+PHP处理节点 一个节点其实就是一个监听特定端口的系统进程
+高速缓存memcached,redis 作用主要是减轻数据库IO和加快热数据访问
+数据库常用手段是分库分表
+消息队列
+
+
+一般使用LVS+PHP集群（1000台），就算日均80亿次请求，每秒有10万并发，那分到每台机器的请求只有100个。
+只要你的PHP程序不是太差，100QPS总没问题吧？
+
+而真正的瓶颈在于数据库和存储系统，数据的一致性，可扩展性，可用性很难保证。
+所以需要根据具体的业务场景再做横向和纵向的分库分表。
+
+再辅以memcache集群缓存，key-value高性能存储，异步队列任务系统，
+整个架构就可以建立起来。
+
+还有一类是真正的高并发，比如WebIM，一台机器要承受数十万的TCP客户端连接，进行大规模的实时通信。
+这种的可以用PHP的异步高并发扩展swoole 。链接：Swoole: PHP的异步、并行、分布式扩展框架
+
+作者：韩天峰
+</code></pre><p>php</p>
+<pre><code>composer
+语法 
+类库
+</code></pre><p>mysql</p>
+<pre><code>数据库优化
+    索引 ？
+        主键索引 普通索引
+    慢日志 explain
+    锁表 
+        行锁 并发最高
+        表锁 并发最低  表共享读锁（Table Read Lock） 表独占写锁（Table Write Lock）
+        页锁 之间
+    innoDB
+        事务 
+            acid
+            并发事务处理带来的问题
+                更新丢失
+                脏读
+                不可重复读
+                幻读
+        行锁
+</code></pre><p>redis</p>
+<pre><code>类型 
+    字符串 键值 计数
+    列表 队列
+    集合 时间段内数据去重
+    有序集合 排行榜应用，取TOP N操作
+    哈希 用户信息
+
+缓存渗透和缓存雪崩
+    值设置1
+    用户分时段
+</code></pre><p>linux</p>
+<pre><code>基本命令
+查看进程
+    ps ef |ps aux |lsof -i
+</code></pre><p>nginx</p>
+<pre><code>配置文件
+负载均衡？
+</code></pre><p>php-fpm</p>
+<pre><code>配置文件
+最优配置？
+</code></pre><p>设计模式</p>
+<p>公司需要学swoole否则先学GO</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="xiumao.coding.me/2018/04/02/ms/" data-id="cjtmyozmr000td3sipfgey6zc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ms/">ms</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/04/03/test/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          test
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/28/git/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Git</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Laravel扩展包/">Laravel扩展包</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/laravel-package/">laravel-package</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/总结/">总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Laravel扩展包/">Laravel扩展包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/develop-site/">develop_site</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel-package/">laravel-package</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel-container/">laravel_container</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel-devolop/">laravel_devolop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel-model/">laravel_model</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel-user/">laravel_user</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lnmp-install/">lnmp-install</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac-xampp/">mac_xampp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ms/">ms</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phpstorm/">phpstorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Laravel扩展包/" style="font-size: 20px;">Laravel扩展包</a> <a href="/tags/develop-site/" style="font-size: 10px;">develop_site</a> <a href="/tags/laravel-package/" style="font-size: 10px;">laravel-package</a> <a href="/tags/laravel-container/" style="font-size: 10px;">laravel_container</a> <a href="/tags/laravel-devolop/" style="font-size: 10px;">laravel_devolop</a> <a href="/tags/laravel-model/" style="font-size: 10px;">laravel_model</a> <a href="/tags/laravel-user/" style="font-size: 10px;">laravel_user</a> <a href="/tags/lnmp-install/" style="font-size: 10px;">lnmp-install</a> <a href="/tags/mac-xampp/" style="font-size: 10px;">mac_xampp</a> <a href="/tags/ms/" style="font-size: 10px;">ms</a> <a href="/tags/mysql/" style="font-size: 20px;">mysql</a> <a href="/tags/phpstorm/" style="font-size: 10px;">phpstorm</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/24/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/06/lnmp-install/">lnmp-install</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/24/mysql-1/">mysql</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/13/develop-site/">develop_site</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/09/2017/">2017</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 xiumao<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
