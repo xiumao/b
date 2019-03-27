@@ -62,278 +62,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-linux/svn" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/07/linux/svn/" class="article-date">
-  <time datetime="2018-10-07T12:35:08.000Z" itemprop="datePublished">2018-10-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/07/linux/svn/">linux</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="subversion"><a href="#subversion" class="headerlink" title="subversion"></a>subversion</h1><h2 id="获取指定用户时间段提交日志"><a href="#获取指定用户时间段提交日志" class="headerlink" title="获取指定用户时间段提交日志"></a>获取指定用户时间段提交日志</h2><blockquote>
-<p>svn log -r {2019-03-13}:{2019-03-14} | sed -n ‘/zhangzhenlong/,/–$/ p’</p>
-</blockquote>
-<h2 id="export"><a href="#export" class="headerlink" title="export"></a>export</h2><blockquote>
-<p>svn  export  [-r 版本号]   (url或目录或文件的全路径)  [本地目录全路径] –username –password –no-auth-cache</p>
-</blockquote>
-<h2 id="svn-help"><a href="#svn-help" class="headerlink" title="svn help"></a>svn help</h2><blockquote>
-<p>svn export –help</p>
-</blockquote>
-<h2 id="创建分支或者标签"><a href="#创建分支或者标签" class="headerlink" title="创建分支或者标签"></a>创建分支或者标签</h2><blockquote>
-<p>svn copy url(trunk) url(branches/tags) -m “add 1.0 released” –username –password –no-auth-cache</p>
-</blockquote>
-<h2 id="删除分支或者标签"><a href="#删除分支或者标签" class="headerlink" title="删除分支或者标签"></a>删除分支或者标签</h2><blockquote>
-<p>svn rm url(branches/tags) -m “rm 1.0 released” –username –password –no-auth-cache</p>
-</blockquote>
-<h2 id="获取分支或者标签信息"><a href="#获取分支或者标签信息" class="headerlink" title="获取分支或者标签信息"></a>获取分支或者标签信息</h2><blockquote>
-<p>svn info url(branches/tags) –username zhangzhenlong –password zhangzhenlong0416 –no-auth-cache</p>
-</blockquote>
-<pre><code>1. 本地开发完成 提交svn
-
-2. svn copy 打tags  查看单个tag svn info url(tag) 并获取tag中的Last Changed Rev: 1
-
-3. 线上发布 svn export -r 1 url(tag)
-
-4. 第二次发布 svn copy 打tags   查看单个tag svn info url(tag) 并获取tag中的Last Changed Rev: 2
-
-5. 线上发布 svn export -r 2 url(tag)
-
-6. 回滚 查看所有tags svn info url(tags) 获取前一个tag的版本号 1  svn export -r 1 url(tags)
-
-
-
-管理员
-
-    用户 CURD
-
-    项目 CURD
-
-发布记录
-
-    测试按钮 发布代码到测试机器
-
-        自动生成版本号
-
-    上线按钮 发布代码到线上机器（下拉选版本）
-
-    回滚按钮 可以回滚到指定版本（下拉选版本）
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="b.weiyujun.cn/2018/10/07/linux/svn/" data-id="cjtqkl2ml000c32si9cmlrb6l" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-tools/vscode" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/09/27/tools/vscode/" class="article-date">
-  <time datetime="2018-09-27T14:35:00.000Z" itemprop="datePublished">2018-09-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/27/tools/vscode/">tools</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="配置宏命令-行尾自动加分号"><a href="#配置宏命令-行尾自动加分号" class="headerlink" title="配置宏命令 行尾自动加分号"></a>配置宏命令 行尾自动加分号</h3><ul>
-<li><p>第一步</p>
-<blockquote>
-<p>文件 C:\Users\Administrator\AppData\Roaming\Code\User\settings.json</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">"macros": &#123;</span><br><span class="line"><span class="code">        "end_semicolon": [ // 末尾加分号</span></span><br><span class="line"><span class="code">            "cursorLineEnd",</span></span><br><span class="line"><span class="code">            &#123;</span></span><br><span class="line"><span class="code">                "command": "type",</span></span><br><span class="line"><span class="code">                "args": &#123;</span></span><br><span class="line"><span class="code">                    "text": ";"</span></span><br><span class="line"><span class="code">                &#125;</span></span><br><span class="line"><span class="code">            &#125;,</span></span><br><span class="line"><span class="code">        ]</span></span><br><span class="line"><span class="code">    &#125;</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li><p>第二步</p>
-<blockquote>
-<p>文件 C:\Users\Administrator\AppData\Roaming\Code\User\keybindings.json</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="code">    "key": "ctrl+Enter",</span></span><br><span class="line"><span class="code">    "command": "macros.end_semicolon"   </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="b.weiyujun.cn/2018/09/27/tools/vscode/" data-id="cjtqkl2na000x32si89vcfbkt" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-laravel/laravel_admin55_dep" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/09/26/laravel/laravel_admin55_dep/" class="article-date">
-  <time datetime="2018-09-26T08:03:33.000Z" itemprop="datePublished">2018-09-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/26/laravel/laravel_admin55_dep/">laravel</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="laravel-5-5"><a href="#laravel-5-5" class="headerlink" title="laravel 5.5"></a>laravel 5.5</h1><h2 id="微信扩展包"><a href="#微信扩展包" class="headerlink" title="微信扩展包"></a>微信扩展包</h2><blockquote>
-<p><a href="https://github.com/overtrue/laravel-wechat" target="_blank" rel="noopener">EasyWeChat</a></p>
-</blockquote>
-<pre><code>composer require overtrue/laravel-wechat:~4.0
-</code></pre><h2 id="HTTP扩展包"><a href="#HTTP扩展包" class="headerlink" title="HTTP扩展包"></a>HTTP扩展包</h2><blockquote>
-<p><a href="https://github.com/guzzle/guzzle" target="_blank" rel="noopener">Guzzlehttp</a></p>
-</blockquote>
-<pre><code>composer require guzzlehttp/guzzle
-</code></pre><h2 id="后台扩展包"><a href="#后台扩展包" class="headerlink" title="后台扩展包"></a>后台扩展包</h2><blockquote>
-<p><a href="http://laravel-admin.org/docs/#/zh/installation" target="_blank" rel="noopener">Laravel-admin</a></p>
-</blockquote>
-<pre><code>composer require encore/laravel-admin 1.5.*
-</code></pre><h2 id="IDE提示"><a href="#IDE提示" class="headerlink" title="IDE提示"></a>IDE提示</h2><blockquote>
-<p><a href="https://github.com/barryvdh/laravel-ide-helper" target="_blank" rel="noopener">laravel-ide-helper</a></p>
-</blockquote>
-<pre><code>composer require barryvdh/laravel-ide-helper
-</code></pre><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><ol>
-<li><p>时区设置 本地化设置</p>
-<blockquote>
-<p>文件 <code>wx.hzyuewan.com\config\app.php</code></p>
-</blockquote>
-<blockquote>
-<p><code>&#39;timezone&#39; =&gt; &#39;UTC&#39;</code> =&gt; <code>&#39;timezone&#39; =&gt; &#39;PRC&#39;</code></p>
-</blockquote>
-<blockquote>
-<p><code>&#39;locale&#39; =&gt; &#39;en&#39;</code> =&gt; <code>&#39;locale&#39; =&gt; &#39;zh-CN&#39;</code></p>
-</blockquote>
-</li>
-<li><p>索引长度 &amp; MySQL / MariaDB</p>
-<blockquote>
-<p>文件 <code>wx.hzyuewan.com\app\Providers\AppServiceProvider.php</code></p>
-</blockquote>
-<blockquote>
-<p>boot方法 加入 <code>Schema::defaultStringLength(191)</code>;</p>
-</blockquote>
-</li>
-<li><p>数据库配置 .env文件</p>
-<blockquote>
-<p>修改</p>
-</blockquote>
-<pre><code>`DB_HOST=127.0.0.1`
-
-`DB_PORT=3306`
-
-`DB_DATABASE=wechat`
-
-`DB_USERNAME=root`
-
-`DB_PASSWORD=root`
-</code></pre><blockquote>
-<p>新增</p>
-</blockquote>
-<pre><code>`APP_LOG=daily`
-</code></pre></li>
-<li><p>laravel-admin 安装</p>
-<blockquote>
-<p><code>php artisan vendor:publish --provider=&quot;Encore\Admin\AdminServiceProvider&quot;</code></p>
-</blockquote>
-<blockquote>
-<p><code>php artisan admin:install</code></p>
-</blockquote>
-<blockquote>
-<p>默认账号密码 <code>admin</code> <code>admin</code></p>
-</blockquote>
-</li>
-<li><p>Laravel-admin upload setting</p>
-<blockquote>
-<p>文件 wx.hzyuewan.com\config\filesystems.php</p>
-</blockquote>
-<blockquote>
-<p>代码示例</p>
-</blockquote>
-<pre><code>&apos;disks&apos; =&gt; [
-    ... ,
-
-    &apos;admin&apos; =&gt; [
-        &apos;driver&apos; =&gt; &apos;local&apos;,
-        &apos;root&apos; =&gt; public_path(&apos;uploads&apos;),
-        &apos;visibility&apos; =&gt; &apos;public&apos;,
-        &apos;url&apos; =&gt; env(&apos;APP_URL&apos;).&apos;/uploads&apos;,
-    ],
-],
-</code></pre></li>
-<li><p>laravel-admin-extensions/log-viewer</p>
-<blockquote>
-<p><code>composer require laravel-admin-ext/log-viewer -vvv</code></p>
-</blockquote>
-<blockquote>
-<p><code>php artisan admin:import log-viewer</code></p>
-</blockquote>
-<p> Open <code>http://localhost/admin/logs</code>.</p>
-</li>
-</ol>
-<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><ol>
-<li><p>创建 模型,迁移表,控制器</p>
-<blockquote>
-<p><code>php artisan make:model Admin/Models/OfficialAccount -m</code></p>
-</blockquote>
-<blockquote>
-<p><code>php artisan admin:make OfficialAccountController --model=App\\Admin\\Models\\OfficialAccount</code></p>
-</blockquote>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="b.weiyujun.cn/2018/09/26/laravel/laravel_admin55_dep/" data-id="cjtqkl2m7000232sihwhofuad" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-tools/tools" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/09/23/tools/tools/" class="article-date">
@@ -711,6 +439,122 @@ laravel
 
 
   
+    <article id="post-me/wx" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/27/me/wx/" class="article-date">
+  <time datetime="2018-07-27T04:05:42.000Z" itemprop="datePublished">2018-07-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/27/me/wx/">me</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="微信开发"><a href="#微信开发" class="headerlink" title="微信开发"></a>微信开发</h1><h2 id="第二步：验证消息的确来自微信服务器"><a href="#第二步：验证消息的确来自微信服务器" class="headerlink" title="第二步：验证消息的确来自微信服务器"></a>第二步：验证消息的确来自微信服务器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">function checkSignature($token) &#123;</span><br><span class="line">    $signature = $_GET[&quot;signature&quot;];</span><br><span class="line">    $timestamp = $_GET[&quot;timestamp&quot;];</span><br><span class="line">    $nonce = $_GET[&quot;nonce&quot;];</span><br><span class="line">    $tmpArr = array($token, $timestamp, $nonce);</span><br><span class="line">    sort($tmpArr, SORT_STRING);</span><br><span class="line">    $tmpStr = implode($tmpArr);</span><br><span class="line">    return sha1($tmpStr) == $signature;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 微信公众后台填写的Token</span><br><span class="line">$token = &apos;hello&apos;;</span><br><span class="line">// 如果验证正确，则返回参数echostr的内容，否则终止执行</span><br><span class="line">if(checkSignature($token)) &#123;</span><br><span class="line">    echo $_GET[&apos;echostr&apos;];</span><br><span class="line">&#125;</span><br><span class="line">exit();</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="b.weiyujun.cn/2018/07/27/me/wx/" data-id="cjtqkl2mw000h32sixw8ufiex" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-me/account" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/27/me/account/" class="article-date">
+  <time datetime="2018-07-27T04:00:42.000Z" itemprop="datePublished">2018-07-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/27/me/account/">me</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="账号"><a href="#账号" class="headerlink" title="账号"></a>账号</h2><h2 id="公众号"><a href="#公众号" class="headerlink" title="公众号"></a>公众号</h2><p><a href="mailto:836360225@qq.com" target="_blank" rel="noopener">836360225@qq.com</a></p>
+<h2 id="公众号-1"><a href="#公众号-1" class="headerlink" title="公众号"></a>公众号</h2><p><a href="mailto:15068186501@163.com" target="_blank" rel="noopener">15068186501@163.com</a></p>
+<h2 id="小程序"><a href="#小程序" class="headerlink" title="小程序"></a>小程序</h2><p><a href="mailto:xiumao@outlook.com" target="_blank" rel="noopener">xiumao@outlook.com</a></p>
+<p><a href="mailto:1801155081@qq.com" target="_blank" rel="noopener">1801155081@qq.com</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="b.weiyujun.cn/2018/07/27/me/account/" data-id="cjtqkl2mv000g32siunmgzgaa" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux/yum" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/04/linux/yum/" class="article-date">
+  <time datetime="2018-07-04T09:53:24.000Z" itemprop="datePublished">2018-07-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/04/linux/yum/">linux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h1><h2 id="svn安装"><a href="#svn安装" class="headerlink" title="svn安装"></a>svn安装</h2><blockquote>
+<p>yum install subversion -y</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="b.weiyujun.cn/2018/07/04/linux/yum/" data-id="cjtqkl2mo000f32si3r9ifj81" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
 
 
   <nav id="page-nav">
@@ -734,7 +578,7 @@ laravel
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
   </div>
 
@@ -747,23 +591,23 @@ laravel
       <ul>
         
           <li>
-            <a href="/2019/03/24/todo/">todo</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/24/sms/">sms</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/24/tour/">tour</a>
-          </li>
-        
-          <li>
             <a href="/2019/03/20/tools/interface/">tools</a>
           </li>
         
           <li>
             <a href="/2019/03/14/linux/docker/">linux</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/08/linux/ssh_gui/">linux</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/05/tools/extension/">tools</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/22/linux/php_ext/">linux</a>
           </li>
         
       </ul>
