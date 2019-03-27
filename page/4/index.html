@@ -62,9 +62,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-tools/apidoc" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-tools/interface" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/07/01/tools/apidoc/" class="article-date">
+    <a href="/2018/07/01/tools/interface/" class="article-date">
   <time datetime="2018-07-01T12:26:09.000Z" itemprop="datePublished">2018-07-01</time>
 </a>
     
@@ -76,7 +76,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/01/tools/apidoc/">tools</a>
+      <a class="article-title" href="/2018/07/01/tools/interface/">tools</a>
     </h1>
   
 
@@ -84,34 +84,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="apidoc"><a href="#apidoc" class="headerlink" title="apidoc"></a>apidoc</h1><h2 id="STEP1-git和node安装（node带有npm）"><a href="#STEP1-git和node安装（node带有npm）" class="headerlink" title="STEP1 git和node安装（node带有npm）"></a>STEP1 git和node安装（node带有npm）</h2><blockquote>
-<p><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">git 默认安装</a></p>
-</blockquote>
-<blockquote>
-<p><a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">node 安装教程</a></p>
-</blockquote>
-<p>node是否安装成功  cmd命令输入</p>
-<p>node –version node是否安装</p>
-<p>npm –version npm是否安装</p>
-<p>path 查看环境变量 node是否全局可用</p>
-<h2 id="STEP2-安装apidoc"><a href="#STEP2-安装apidoc" class="headerlink" title="STEP2 安装apidoc"></a>STEP2 安装apidoc</h2><p>npm install apidoc -g 全局安装</p>
-<p>apidoc -h apidoc是否安装</p>
-<p>apidoc -i myapp/ -o apidoc/ 把myapp的api文档生成到apidoc目录下</p>
-<h2 id="STEP3-DEMO"><a href="#STEP3-DEMO" class="headerlink" title="STEP3 DEMO"></a>STEP3 DEMO</h2><p>新建文件夹example</p>
-<p>在example中新建配置文件apidoc.json</p>
-<p>apidoc.json写入内容</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"DEMO"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"0.0.1"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">"DEMO_DESCRIPTION"</span>,</span><br><span class="line">  <span class="attr">"title"</span>: <span class="string">"DEMO_TEST"</span>,</span><br><span class="line">  <span class="attr">"url"</span> : <span class="string">"https://developer.github.com/v3/"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>example新建demo.php写入代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">/**</span><br><span class="line"> * @api &#123;get&#125; /user/:id Request User information</span><br><span class="line"> * @apiName GetUser</span><br><span class="line"> * @apiGroup User</span><br><span class="line"> *</span><br><span class="line"> * @apiParam &#123;Number&#125; id Users unique ID.</span><br><span class="line"> *</span><br><span class="line"> * @apiSuccess &#123;String&#125; firstname Firstname of the User.</span><br><span class="line"> * @apiSuccess &#123;String&#125; lastname  Lastname of the User.</span><br><span class="line"> *</span><br><span class="line"> * @apiSuccessExample Success-Response:</span><br><span class="line"> *     HTTP/1.1 200 OK</span><br><span class="line"> *     &#123;</span><br><span class="line"> *       &quot;firstname&quot;: &quot;John&quot;,</span><br><span class="line"> *       &quot;lastname&quot;: &quot;Doe&quot;</span><br><span class="line"> *     &#125;</span><br><span class="line"> *</span><br><span class="line"> * @apiError UserNotFound The id of the User was not found.</span><br><span class="line"> *</span><br><span class="line"> * @apiErrorExample Error-Response:</span><br><span class="line"> *     HTTP/1.1 404 Not Found</span><br><span class="line"> *     &#123;</span><br><span class="line"> *       &quot;error&quot;: &quot;UserNotFound&quot;</span><br><span class="line"> *     &#125;</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
-<h2 id="cmd命令行运行"><a href="#cmd命令行运行" class="headerlink" title="cmd命令行运行"></a>cmd命令行运行</h2><blockquote>
-<p><code>apidoc -i example/ -o apidoc/`</code></p>
-</blockquote>
-<p> 打开apidoc里面的index.html即可看见接口文档</p>
+        <h2 id="面向接口编程Demo"><a href="#面向接口编程Demo" class="headerlink" title="面向接口编程Demo"></a>面向接口编程Demo</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">js</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ys</span><span class="params">($a, $b)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Jf</span> <span class="keyword">implements</span> <span class="title">js</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ys</span><span class="params">($a, $b)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"减法运算......结果为:"</span> . ($a - $b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">China</span> <span class="keyword">implements</span> <span class="title">js</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> $varl = <span class="keyword">null</span>;<span class="comment">//这里直接：public $varl = new nothingx(); 会出错。</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;varl = <span class="keyword">new</span> nothingx();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ys</span><span class="params">($a, $b)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;varl-&gt;say();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">nothingx</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">say</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"我什么运算都不做...只是为了实现&lt;font color=#990000&gt;</span></span><br><span class="line"><span class="string">        &lt;b&gt;‘耦合设计模式'&lt;/b&gt;&lt;/font&gt;...我是出来打酱油的......"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> $one;</span><br><span class="line">    <span class="keyword">private</span> $two;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($x, $y)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;one = $x;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;two = $y;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&lt;font size=20px&gt;&lt;strong&gt;面向对象程序设计——接口&lt;/font&gt;</span></span><br><span class="line"><span class="string">        &lt;/strong&gt;&lt;hr&gt;Class test初始化：&lt;br&gt;</span></span><br><span class="line"><span class="string">        属性\$one="</span> . <span class="keyword">$this</span>-&gt;one . <span class="string">"　　属性\$two="</span> . <span class="keyword">$this</span>-&gt;two . <span class="string">"&lt;hr&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">display</span><span class="params">(js $a)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"&lt;font color=#990000&gt;&lt;b&gt;用PHP接口技术实现的运算——开始运算啦:</span></span><br><span class="line"><span class="string">        &lt;/b&gt;&lt;/font&gt;&lt;hr&gt;"</span> . $a-&gt;ys(<span class="keyword">$this</span>-&gt;one, <span class="keyword">$this</span>-&gt;two) . <span class="string">"&lt;hr&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$t = <span class="keyword">new</span> test(<span class="number">103</span>, <span class="number">2</span>);</span><br><span class="line">$t1 = <span class="keyword">new</span> jf;</span><br><span class="line">$t2 = <span class="keyword">new</span> China;</span><br><span class="line"><span class="keyword">echo</span> $t-&gt;display($t1);</span><br><span class="line"><span class="keyword">echo</span> $t-&gt;display($t2);</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="b.weiyujun.cn/2018/07/01/tools/apidoc/" data-id="cjtqkl2n3000o32sirj7pr9w2" class="article-share-link">Share</a>
+      <a data-url="b.weiyujun.cn/2018/07/01/tools/interface/" data-id="cjtqkl2n5000r32sivwj0tjfi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -524,10 +502,6 @@ realm = spring-hello-world # 版本库的认证域，在登录时提示的认证
       <ul>
         
           <li>
-            <a href="/2019/03/20/tools/interface/">tools</a>
-          </li>
-        
-          <li>
             <a href="/2019/03/14/linux/docker/">linux</a>
           </li>
         
@@ -541,6 +515,10 @@ realm = spring-hello-world # 版本库的认证域，在登录时提示的认证
         
           <li>
             <a href="/2019/02/22/linux/php_ext/">linux</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/22/linux/mysqldump/">linux</a>
           </li>
         
       </ul>
