@@ -84,30 +84,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="apidoc"><a href="#apidoc" class="headerlink" title="apidoc"></a>apidoc</h1><h2 id="STEP1-git和node安装（node带有npm）"><a href="#STEP1-git和node安装（node带有npm）" class="headerlink" title="STEP1 git和node安装（node带有npm）"></a>STEP1 git和node安装（node带有npm）</h2><blockquote>
-<p><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">git 默认安装</a></p>
-</blockquote>
-<blockquote>
-<p><a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">node 安装教程</a></p>
-</blockquote>
-<p>node是否安装成功  cmd命令输入</p>
-<p>node –version node是否安装</p>
-<p>npm –version npm是否安装</p>
-<p>path 查看环境变量 node是否全局可用</p>
-<h2 id="STEP2-安装apidoc"><a href="#STEP2-安装apidoc" class="headerlink" title="STEP2 安装apidoc"></a>STEP2 安装apidoc</h2><p>npm install apidoc -g 全局安装</p>
-<p>apidoc -h apidoc是否安装</p>
-<p>apidoc -i myapp/ -o apidoc/ 把myapp的api文档生成到apidoc目录下</p>
-<h2 id="STEP3-DEMO"><a href="#STEP3-DEMO" class="headerlink" title="STEP3 DEMO"></a>STEP3 DEMO</h2><p>新建文件夹example</p>
-<p>在example中新建配置文件apidoc.json</p>
-<p>apidoc.json写入内容</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"DEMO"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"0.0.1"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">"DEMO_DESCRIPTION"</span>,</span><br><span class="line">  <span class="attr">"title"</span>: <span class="string">"DEMO_TEST"</span>,</span><br><span class="line">  <span class="attr">"url"</span> : <span class="string">"https://developer.github.com/v3/"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>example新建demo.php写入代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">/**</span><br><span class="line"> * @api &#123;get&#125; /user/:id Request User information</span><br><span class="line"> * @apiName GetUser</span><br><span class="line"> * @apiGroup User</span><br><span class="line"> *</span><br><span class="line"> * @apiParam &#123;Number&#125; id Users unique ID.</span><br><span class="line"> *</span><br><span class="line"> * @apiSuccess &#123;String&#125; firstname Firstname of the User.</span><br><span class="line"> * @apiSuccess &#123;String&#125; lastname  Lastname of the User.</span><br><span class="line"> *</span><br><span class="line"> * @apiSuccessExample Success-Response:</span><br><span class="line"> *     HTTP/1.1 200 OK</span><br><span class="line"> *     &#123;</span><br><span class="line"> *       &quot;firstname&quot;: &quot;John&quot;,</span><br><span class="line"> *       &quot;lastname&quot;: &quot;Doe&quot;</span><br><span class="line"> *     &#125;</span><br><span class="line"> *</span><br><span class="line"> * @apiError UserNotFound The id of the User was not found.</span><br><span class="line"> *</span><br><span class="line"> * @apiErrorExample Error-Response:</span><br><span class="line"> *     HTTP/1.1 404 Not Found</span><br><span class="line"> *     &#123;</span><br><span class="line"> *       &quot;error&quot;: &quot;UserNotFound&quot;</span><br><span class="line"> *     &#125;</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
-<h2 id="cmd命令行运行"><a href="#cmd命令行运行" class="headerlink" title="cmd命令行运行"></a>cmd命令行运行</h2><blockquote>
-<p><code>apidoc -i example/ -o apidoc/`</code></p>
-</blockquote>
-<p> 打开apidoc里面的index.html即可看见接口文档</p>
-
+        <h1 id="apidoc"><a href="#apidoc" class="headerlink" title="apidoc"></a>apidoc</h1>
+        
+          <p class="article-more-link">
+            <a href="/blog/2018/07/01/tools/apidoc/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -143,8 +125,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="面向接口编程Demo"><a href="#面向接口编程Demo" class="headerlink" title="面向接口编程Demo"></a>面向接口编程Demo</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">js</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ys</span><span class="params">($a, $b)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Jf</span> <span class="keyword">implements</span> <span class="title">js</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ys</span><span class="params">($a, $b)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"减法运算......结果为:"</span> . ($a - $b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">China</span> <span class="keyword">implements</span> <span class="title">js</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> $varl = <span class="keyword">null</span>;<span class="comment">//这里直接：public $varl = new nothingx(); 会出错。</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;varl = <span class="keyword">new</span> nothingx();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ys</span><span class="params">($a, $b)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;varl-&gt;say();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">nothingx</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">say</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"我什么运算都不做...只是为了实现&lt;font color=#990000&gt;</span></span><br><span class="line"><span class="string">        &lt;b&gt;‘耦合设计模式'&lt;/b&gt;&lt;/font&gt;...我是出来打酱油的......"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> $one;</span><br><span class="line">    <span class="keyword">private</span> $two;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($x, $y)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;one = $x;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;two = $y;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&lt;font size=20px&gt;&lt;strong&gt;面向对象程序设计——接口&lt;/font&gt;</span></span><br><span class="line"><span class="string">        &lt;/strong&gt;&lt;hr&gt;Class test初始化：&lt;br&gt;</span></span><br><span class="line"><span class="string">        属性\$one="</span> . <span class="keyword">$this</span>-&gt;one . <span class="string">"　　属性\$two="</span> . <span class="keyword">$this</span>-&gt;two . <span class="string">"&lt;hr&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">display</span><span class="params">(js $a)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"&lt;font color=#990000&gt;&lt;b&gt;用PHP接口技术实现的运算——开始运算啦:</span></span><br><span class="line"><span class="string">        &lt;/b&gt;&lt;/font&gt;&lt;hr&gt;"</span> . $a-&gt;ys(<span class="keyword">$this</span>-&gt;one, <span class="keyword">$this</span>-&gt;two) . <span class="string">"&lt;hr&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$t = <span class="keyword">new</span> test(<span class="number">103</span>, <span class="number">2</span>);</span><br><span class="line">$t1 = <span class="keyword">new</span> jf;</span><br><span class="line">$t2 = <span class="keyword">new</span> China;</span><br><span class="line"><span class="keyword">echo</span> $t-&gt;display($t1);</span><br><span class="line"><span class="keyword">echo</span> $t-&gt;display($t2);</span><br></pre></td></tr></table></figure>
-
+        <h1 id="面向接口编程Demo"><a href="#面向接口编程Demo" class="headerlink" title="面向接口编程Demo"></a>面向接口编程Demo</h1>
+        
+          <p class="article-more-link">
+            <a href="/blog/2018/07/01/tools/interface/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -180,18 +166,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h1><h2 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h2><p>user_name 普通索引</p>
-<blockquote>
-<p> 索引无效</p>
-</blockquote>
-<pre><code>where user_name like &apos;%西%&apos;
-
-where user_name like &apos;%西&apos;
-</code></pre><blockquote>
-<p> 索引有效</p>
-</blockquote>
-<pre><code>where user_name like &apos;西%&apos;
-</code></pre>
+        <h1 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h1>
+        
+          <p class="article-more-link">
+            <a href="/blog/2018/06/25/mysql/index/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -227,41 +207,12 @@ where user_name like &apos;%西&apos;
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="svnserve-安装"><a href="#svnserve-安装" class="headerlink" title="svnserve 安装"></a>svnserve 安装</h2><blockquote>
-<p>yum install subversion  </p>
-</blockquote>
-<blockquote>
-<p>svnserve –version</p>
-</blockquote>
-<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><pre><code>ps aux | grep svn
-
-kill -9 pid
-</code></pre><h3 id="修改默认数据目录"><a href="#修改默认数据目录" class="headerlink" title="修改默认数据目录"></a>修改默认数据目录</h3><pre><code>vi /etc/sysconfig/svnserve
-</code></pre><p>将这行代码</p>
-<pre><code>OPTIONS=&quot;-r /var/svn&quot;;
-</code></pre><p>修改为</p>
-<pre><code>OPTIONS=&quot;-r /home/svnrepo&quot;;
-</code></pre><p>然后创建仓库根目录</p>
-<pre><code>mkdir /home/svnrepo   
-</code></pre><p>创建版本库</p>
-<pre><code>vnadmin create /home/svnrepo/test
-</code></pre><p>创建完成后进到/home/svnrepo/test/conf目录下</p>
-<p>修改 authz、passwd、svnserve.conf 这三个文件</p>
-<p>vi authz 添加下面的代码</p>
-<pre><code>[/]  
-admin = rw  
-</code></pre><p>vi passwd 添加账号对应的密码</p>
-<pre><code>admin = 123456  
-</code></pre><p>vi svnserve.conf 把下面五行代码前的注释;打开，并修改为下面所示。</p>
-<pre><code>anon-access = none # 未登录用户不给任何权限
-auth-access = write # 授权用户的权限
-authz-db = authz # 用户权限配置文件
-password-db = passwd # 用户密码配置文件
-realm = spring-hello-world # 版本库的认证域，在登录时提示的认证域名称
-</code></pre><h3 id="启动SVN服务"><a href="#启动SVN服务" class="headerlink" title="启动SVN服务"></a>启动SVN服务</h3><pre><code>sudo systemctl start svnserve.service  
-</code></pre><h3 id="设置成开机启动"><a href="#设置成开机启动" class="headerlink" title="设置成开机启动"></a>设置成开机启动</h3><pre><code>sudo systemctl enable svnserve.service  
-</code></pre><p>到这应该就完成了，如果检出无相应，查看是不是防火墙没有开启3690端口</p>
-
+        <h1 id="svnserve-安装"><a href="#svnserve-安装" class="headerlink" title="svnserve 安装"></a>svnserve 安装</h1>
+        
+          <p class="article-more-link">
+            <a href="/blog/2018/06/19/linux/svnserve/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -297,8 +248,12 @@ realm = spring-hello-world # 版本库的认证域，在登录时提示的认证
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="vim命令"><a href="#vim命令" class="headerlink" title="vim命令"></a>vim命令</h1><p><img src="https://xiumao.oss-cn-shanghai.aliyuncs.com/image/vim.png" alt="vim"></p>
-
+        <h1 id="vim命令"><a href="#vim命令" class="headerlink" title="vim命令"></a>vim命令</h1>
+        
+          <p class="article-more-link">
+            <a href="/blog/2018/06/16/linux/vim/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -334,19 +289,12 @@ realm = spring-hello-world # 版本库的认证域，在登录时提示的认证
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><h3 id="Laravel"><a href="#Laravel" class="headerlink" title="Laravel"></a>Laravel</h3><blockquote>
-<p><a href="http://laravel-admin.org/docs/#/zh/" target="_blank" rel="noopener">http://laravel-admin.org/docs/#/zh/</a></p>
-</blockquote>
-<blockquote>
-<p><a href="http://laravelacademy.org/laravel-docs-5_4" target="_blank" rel="noopener">http://laravelacademy.org/laravel-docs-5_4</a></p>
-</blockquote>
-<blockquote>
-<p><a href="https://laravel-china.org/" target="_blank" rel="noopener">https://laravel-china.org/</a></p>
-</blockquote>
-<h3 id="Golang"><a href="#Golang" class="headerlink" title="Golang"></a>Golang</h3><blockquote>
-<p><a href="https://gobyexample.xgwang.me/" target="_blank" rel="noopener">https://gobyexample.xgwang.me/</a></p>
-</blockquote>
-
+        <h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1>
+        
+          <p class="article-more-link">
+            <a href="/blog/2018/06/10/linux/links/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -382,13 +330,12 @@ realm = spring-hello-world # 版本库的认证域，在登录时提示的认证
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="阿里云模版短信"><a href="#阿里云模版短信" class="headerlink" title="阿里云模版短信"></a>阿里云模版短信</h3><blockquote>
-<p>变量不支持透传url，同时检查通过变量是否透传了一些敏感信息触发关键字</p>
-</blockquote>
-<h3 id="阿里云域名解析API"><a href="#阿里云域名解析API" class="headerlink" title="阿里云域名解析API"></a>阿里云域名解析API</h3><blockquote>
-<p>签名字符串需要urlencode编码 否则会解析错误</p>
-</blockquote>
-
+        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1>
+        
+          <p class="article-more-link">
+            <a href="/blog/2018/05/29/date/20180529/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">

@@ -7,17 +7,17 @@
   
   <title>me | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="微信开发第二步：验证消息的确来自微信服务器1234567891011121314151617181920&amp;lt;?phpfunction checkSignature($token) &amp;#123;    $signature = $_GET[&amp;quot;signature&amp;quot;];    $timestamp = $_GET[&amp;quot;timestamp&amp;quot;];    $nonce">
+  <meta name="description" content="微信开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="me">
 <meta property="og:url" content="https://xiumao.github.io/blog/2018/07/27/me/wx/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="微信开发第二步：验证消息的确来自微信服务器1234567891011121314151617181920&amp;lt;?phpfunction checkSignature($token) &amp;#123;    $signature = $_GET[&amp;quot;signature&amp;quot;];    $timestamp = $_GET[&amp;quot;timestamp&amp;quot;];    $nonce">
+<meta property="og:description" content="微信开发">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-27T02:08:04.301Z">
+<meta property="og:updated_time" content="2019-03-27T04:16:43.879Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="me">
-<meta name="twitter:description" content="微信开发第二步：验证消息的确来自微信服务器1234567891011121314151617181920&amp;lt;?phpfunction checkSignature($token) &amp;#123;    $signature = $_GET[&amp;quot;signature&amp;quot;];    $timestamp = $_GET[&amp;quot;timestamp&amp;quot;];    $nonce">
+<meta name="twitter:description" content="微信开发">
   
     <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -86,7 +86,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="微信开发"><a href="#微信开发" class="headerlink" title="微信开发"></a>微信开发</h1><h2 id="第二步：验证消息的确来自微信服务器"><a href="#第二步：验证消息的确来自微信服务器" class="headerlink" title="第二步：验证消息的确来自微信服务器"></a>第二步：验证消息的确来自微信服务器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">function checkSignature($token) &#123;</span><br><span class="line">    $signature = $_GET[&quot;signature&quot;];</span><br><span class="line">    $timestamp = $_GET[&quot;timestamp&quot;];</span><br><span class="line">    $nonce = $_GET[&quot;nonce&quot;];</span><br><span class="line">    $tmpArr = array($token, $timestamp, $nonce);</span><br><span class="line">    sort($tmpArr, SORT_STRING);</span><br><span class="line">    $tmpStr = implode($tmpArr);</span><br><span class="line">    return sha1($tmpStr) == $signature;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 微信公众后台填写的Token</span><br><span class="line">$token = &apos;hello&apos;;</span><br><span class="line">// 如果验证正确，则返回参数echostr的内容，否则终止执行</span><br><span class="line">if(checkSignature($token)) &#123;</span><br><span class="line">    echo $_GET[&apos;echostr&apos;];</span><br><span class="line">&#125;</span><br><span class="line">exit();</span><br></pre></td></tr></table></figure>
+        <h1 id="微信开发"><a href="#微信开发" class="headerlink" title="微信开发"></a>微信开发</h1><a id="more"></a>
+<h2 id="第二步：验证消息的确来自微信服务器"><a href="#第二步：验证消息的确来自微信服务器" class="headerlink" title="第二步：验证消息的确来自微信服务器"></a>第二步：验证消息的确来自微信服务器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">function checkSignature($token) &#123;</span><br><span class="line">    $signature = $_GET[&quot;signature&quot;];</span><br><span class="line">    $timestamp = $_GET[&quot;timestamp&quot;];</span><br><span class="line">    $nonce = $_GET[&quot;nonce&quot;];</span><br><span class="line">    $tmpArr = array($token, $timestamp, $nonce);</span><br><span class="line">    sort($tmpArr, SORT_STRING);</span><br><span class="line">    $tmpStr = implode($tmpArr);</span><br><span class="line">    return sha1($tmpStr) == $signature;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 微信公众后台填写的Token</span><br><span class="line">$token = &apos;hello&apos;;</span><br><span class="line">// 如果验证正确，则返回参数echostr的内容，否则终止执行</span><br><span class="line">if(checkSignature($token)) &#123;</span><br><span class="line">    echo $_GET[&apos;echostr&apos;];</span><br><span class="line">&#125;</span><br><span class="line">exit();</span><br></pre></td></tr></table></figure>
 
       
     </div>

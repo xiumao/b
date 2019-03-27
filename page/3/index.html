@@ -84,15 +84,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="SwitchHosts"><a href="#SwitchHosts" class="headerlink" title="SwitchHosts"></a>SwitchHosts</h2><blockquote>
-<p><a href="https://github.com/oldj/SwitchHosts/releases" target="_blank" rel="noopener">SwitchHosts</a></p>
-</blockquote>
-<p>作为JavaScript开发人员，这些必备的VS Code插件你都用过吗<br><a href="https://my.oschina.net/powertoolsteam/blog/1932551" target="_blank" rel="noopener">https://my.oschina.net/powertoolsteam/blog/1932551</a></p>
-<p>Hadoop - 企业级大数据管理平台CDH(介绍和准备工作)<br><a href="https://my.oschina.net/wenzhenxi/blog/1926697" target="_blank" rel="noopener">https://my.oschina.net/wenzhenxi/blog/1926697</a></p>
-<p>Hadoop - 企业级大数据管理平台CDH(安装Hadoop组件)<br><a href="https://my.oschina.net/wenzhenxi/blog/1932543" target="_blank" rel="noopener">https://my.oschina.net/wenzhenxi/blog/1932543</a></p>
-<p>ELK构建MySQL慢日志收集平台详解<br><a href="https://my.oschina.net/37Y37/blog/1928684" target="_blank" rel="noopener">https://my.oschina.net/37Y37/blog/1928684</a></p>
-<p>从React Native到微服务，落地一个全栈解决方案<br><a href="https://www.oschina.net/question/148170_2283001" target="_blank" rel="noopener">https://www.oschina.net/question/148170_2283001</a></p>
-
+        <h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1>
+        
+          <p class="article-more-link">
+            <a href="/blog/2018/09/23/tools/tools/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -128,21 +125,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="general-log"><a href="#general-log" class="headerlink" title="general log"></a>general log</h3><ul>
-<li>开启 general log 将所有到达MySQL Server的SQL语句记录下来。</li>
-<li>一般不会开启开功能，因为log的量会非常庞大。但个别情况下可能会临时的开一会儿general log以供排障使用。 </li>
-<li>相关参数一共有3：general_log、log_output、general_log_file<blockquote>
-<p>show variables like ‘general_log’;<br>set global general_log=on; – 开启日志功能</p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>show variables like ‘general_log_file’;  – 看看日志文件保存位置<br>set global general_log_file=’tmp/general.lg’; – 设置日志文件保存位置</p>
-</blockquote>
-<blockquote>
-<p>show variables like ‘log_output’;  – 看看日志输出类型  table或file<br>set global log_output=’table’; – 设置输出类型为 table<br>set global log_output=’file’;   – 设置输出类型为file</p>
-</blockquote>
-
+        <h1 id="general-log"><a href="#general-log" class="headerlink" title="general log"></a>general log</h1>
+        
+          <p class="article-more-link">
+            <a href="/blog/2018/09/17/mysql/log/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -178,16 +166,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="CURD"><a href="#CURD" class="headerlink" title="CURD"></a>CURD</h2><h3 id="update"><a href="#update" class="headerlink" title="update"></a>update</h3><blockquote>
-<p>set sql_safe_updates = 0;</p>
-</blockquote>
-<blockquote>
-<p>update ignore user_day_pay set game_id = 100000280 where game_id = 100000297;</p>
-</blockquote>
-<h3 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h3><blockquote>
-<p>delete from user_day_pay where game_id = xxx;</p>
-</blockquote>
-
+        <h1 id="CURD"><a href="#CURD" class="headerlink" title="CURD"></a>CURD</h1>
+        
+          <p class="article-more-link">
+            <a href="/blog/2018/09/15/mysql/dml/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -223,47 +207,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Laravel5-5-laravel-package"><a href="#Laravel5-5-laravel-package" class="headerlink" title="Laravel5.5  laravel-package"></a>Laravel5.5  laravel-package</h1><h2 id="使用-Laravel-Generator-快速为-Laravel-应用生成CRUD、API、测试用例代码"><a href="#使用-Laravel-Generator-快速为-Laravel-应用生成CRUD、API、测试用例代码" class="headerlink" title="使用 Laravel Generator 快速为 Laravel 应用生成CRUD、API、测试用例代码"></a>使用 Laravel Generator 快速为 Laravel 应用生成CRUD、API、测试用例代码</h2><pre><code>&quot;infyomlabs/laravel-generator&quot;: &quot;5.6.x-dev&quot;,
-&quot;laravelcollective/html&quot;: &quot;^5.5.0&quot;,
-&quot;infyomlabs/adminlte-templates&quot;: &quot;5.6.x-dev&quot;,
-&quot;infyomlabs/swagger-generator&quot;: &quot;dev-master&quot;,
-&quot;jlapp/swaggervel&quot;: &quot;dev-master&quot;,
-&quot;doctrine/dbal&quot;: &quot;~2.3&quot;,
-</code></pre><h2 id="PHP-HTTP-客户端"><a href="#PHP-HTTP-客户端" class="headerlink" title="PHP HTTP 客户端"></a>PHP HTTP 客户端</h2><pre><code>&quot;guzzlehttp/guzzle&quot;: &quot;^6.3&quot;,
-</code></pre><h2 id="EXCEL表格"><a href="#EXCEL表格" class="headerlink" title="EXCEL表格"></a>EXCEL表格</h2><pre><code>&quot;maatwebsite/excel&quot;: &quot;~2.1.0&quot;,
-</code></pre><h2 id="HTML-Purifier-–非常好用的XSS过滤器"><a href="#HTML-Purifier-–非常好用的XSS过滤器" class="headerlink" title="HTML Purifier –非常好用的XSS过滤器"></a>HTML Purifier –非常好用的XSS过滤器</h2><pre><code>&quot;mews/purifier&quot;: &quot;^2.0&quot;,
-</code></pre><h2 id="EasyWeChat-是一个基于-MIT-协议开源的非官方微信-SDK"><a href="#EasyWeChat-是一个基于-MIT-协议开源的非官方微信-SDK" class="headerlink" title="EasyWeChat 是一个基于 MIT 协议开源的非官方微信 SDK."></a>EasyWeChat 是一个基于 MIT 协议开源的非官方微信 SDK.</h2><pre><code>&quot;overtrue/wechat:~4.0&quot;,
-</code></pre><h2 id="阿里OSS"><a href="#阿里OSS" class="headerlink" title="阿里OSS"></a>阿里OSS</h2><pre><code>&quot;jacobcyl/ali-oss-storage&quot;: &quot;dev-master&quot;,
-</code></pre><h2 id="IDE开发工具"><a href="#IDE开发工具" class="headerlink" title="IDE开发工具"></a>IDE开发工具</h2><pre><code>&quot;barryvdh/laravel-ide-helper&quot;: &quot;^2.4&quot;,
-</code></pre><h2 id="调试工具"><a href="#调试工具" class="headerlink" title="调试工具"></a>调试工具</h2><pre><code>&quot;barryvdh/laravel-debugbar&quot;: &quot;^3.1&quot;,
-</code></pre><h2 id="PHP代码规范"><a href="#PHP代码规范" class="headerlink" title="PHP代码规范"></a>PHP代码规范</h2><pre><code>https://github.com/FriendsOfPHP/PHP-CS-Fixer
-</code></pre><h2 id="集中错误服务器sentry"><a href="#集中错误服务器sentry" class="headerlink" title="集中错误服务器sentry"></a>集中错误服务器sentry</h2><pre><code>https://sentry.io
-</code></pre><h2 id="用户日志"><a href="#用户日志" class="headerlink" title="用户日志"></a>用户日志</h2><pre><code>&quot;spatie/laravel-activitylog&quot;: &quot;^2.5&quot;,
-</code></pre><h2 id="爬虫工具"><a href="#爬虫工具" class="headerlink" title="爬虫工具"></a>爬虫工具</h2><pre><code>&quot;jaeger/querylist&quot;: &quot;^4.0&quot;,
-&quot;jaeger/querylist-phantomjs&quot;: &quot;^4.0&quot;,
-</code></pre><h2 id="LOG日志"><a href="#LOG日志" class="headerlink" title="LOG日志"></a>LOG日志</h2><pre><code>&quot;arcanedev/log-viewer&quot;: &quot;^4.4&quot;,
-</code></pre><h2 id="Laravel5-5"><a href="#Laravel5-5" class="headerlink" title="Laravel5.5"></a>Laravel5.5</h2><pre><code>&quot;filp/whoops&quot;: &quot;~2.0&quot;,
-&quot;fzaninotto/faker&quot;: &quot;~1.4&quot;,
-&quot;mockery/mockery&quot;: &quot;0.9&quot;,
-&quot;phpstan/phpstan&quot;: &quot;^0.9.2&quot;,
-&quot;phpunit/phpunit&quot;: &quot;~6.0&quot;,
-&quot;laravel/dusk&quot;: &quot;v2.0.14&quot;,
-</code></pre><h2 id="Laravel后台"><a href="#Laravel后台" class="headerlink" title="Laravel后台"></a>Laravel后台</h2><pre><code>&quot;tcg/voyager&quot;: &quot;^1.0&quot;
-</code></pre><h2 id="全文搜索"><a href="#全文搜索" class="headerlink" title="全文搜索"></a>全文搜索</h2><blockquote>
-<p><a href="https://www.elastic.co/cn/" target="_blank" rel="noopener">官网</a></p>
-</blockquote>
-<blockquote>
-<p><a href="https://github.com/medcl/elasticsearch-rtf" target="_blank" rel="noopener">集成包</a></p>
-</blockquote>
-<pre><code>分词
-    medcl/elasticsearch-analysis-ik
-
-laravel
-
-    &quot;laravel/scout&quot;: &quot;v3.0.14&quot;
-    &quot;tamayo/laravel-scout-elastic&quot;: &quot;^3.0&quot;
-</code></pre><h2 id="后台模板"><a href="#后台模板" class="headerlink" title="后台模板"></a>后台模板</h2><pre><code>composer require &quot;almasaeed2010/adminlte=~2.4&quot;
-</code></pre>
+        <h1 id="Laravel5-5-laravel-package"><a href="#Laravel5-5-laravel-package" class="headerlink" title="Laravel5.5  laravel-package"></a>Laravel5.5  laravel-package</h1>
+        
+          <p class="article-more-link">
+            <a href="/blog/2018/09/12/laravel/package/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -299,21 +248,12 @@ laravel
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="mongo导入"><a href="#mongo导入" class="headerlink" title="mongo导入"></a>mongo导入</h1><ul>
-<li><p>使用mongo命令将数据库删除</p>
-<ul>
-<li>use db_name;</li>
-<li>db.dropDatabase()</li>
-</ul>
-</li>
-<li><p>导入（指定文件夹）数据</p>
-<ul>
-<li>linux命令：mongorestore -d db_name 文件夹目录</li>
-<li>windows命令：mongorestore.exe -d db_name 文件夹目录</li>
-</ul>
-</li>
-</ul>
-
+        <h1 id="mongo导入"><a href="#mongo导入" class="headerlink" title="mongo导入"></a>mongo导入</h1>
+        
+          <p class="article-more-link">
+            <a href="/blog/2018/09/04/mongo/mongo/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -349,18 +289,7 @@ laravel
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="lnmp-install"><a href="#lnmp-install" class="headerlink" title="lnmp-install"></a>lnmp-install</h1><h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><pre><code>1.命令 wget http://hk1.php.net/get/php-5.4.45.tar.gz/from/this/mirror
-
-2.命令 tar -zxvf mirror
-
-3.命令 cd php-5.4.45
-
-4.命令 ./configure --prefix=/usr/local/php5.4 --enable-fpm
-
-5.命令 make
-
-6.命令 sudo make install
-</code></pre>
+        <h1 id="lnmp-install"><a href="#lnmp-install" class="headerlink" title="lnmp-install"></a>lnmp-install</h1>
         
           <p class="article-more-link">
             <a href="/blog/2018/08/15/linux/lnmp/#more">Read More</a>
@@ -401,31 +330,12 @@ laravel
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="短信发送组件"><a href="#短信发送组件" class="headerlink" title="短信发送组件"></a>短信发送组件</h2><blockquote>
-<p><a href="https://github.com/overtrue/easy-sms" target="_blank" rel="noopener">https://github.com/overtrue/easy-sms</a></p>
-</blockquote>
-<h2 id="微信SDK组件"><a href="#微信SDK组件" class="headerlink" title="微信SDK组件"></a>微信SDK组件</h2><blockquote>
-<p><a href="https://github.com/overtrue/laravel-wechat" target="_blank" rel="noopener">https://github.com/overtrue/laravel-wechat</a></p>
-</blockquote>
-<h2 id="阿里OSS"><a href="#阿里OSS" class="headerlink" title="阿里OSS"></a>阿里OSS</h2><blockquote>
-<p><a href="https://github.com/aliyun/aliyun-oss-php-sdk" target="_blank" rel="noopener">https://github.com/aliyun/aliyun-oss-php-sdk</a></p>
-</blockquote>
-<h2 id="Laravel-Excel"><a href="#Laravel-Excel" class="headerlink" title="Laravel Excel"></a>Laravel Excel</h2><blockquote>
-<p><a href="https://github.com/Maatwebsite/Laravel-Excel" target="_blank" rel="noopener">https://github.com/Maatwebsite/Laravel-Excel</a></p>
-</blockquote>
-<h2 id="图片处理"><a href="#图片处理" class="headerlink" title="图片处理"></a>图片处理</h2><blockquote>
-<p><a href="https://github.com/Intervention/image" target="_blank" rel="noopener">https://github.com/Intervention/image</a></p>
-</blockquote>
-<h2 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h2><blockquote>
-<p><a href="https://github.com/guzzle/guzzle" target="_blank" rel="noopener">https://github.com/guzzle/guzzle</a></p>
-</blockquote>
-<h2 id="DUBUG"><a href="#DUBUG" class="headerlink" title="DUBUG"></a>DUBUG</h2><blockquote>
-<p><a href="https://github.com/barryvdh/laravel-debugbar" target="_blank" rel="noopener">https://github.com/barryvdh/laravel-debugbar</a></p>
-</blockquote>
-<h2 id="代码提示"><a href="#代码提示" class="headerlink" title="代码提示"></a>代码提示</h2><blockquote>
-<p><a href="https://github.com/barryvdh/laravel-ide-helper" target="_blank" rel="noopener">https://github.com/barryvdh/laravel-ide-helper</a></p>
-</blockquote>
-
+        <h1 id="短信发送组件"><a href="#短信发送组件" class="headerlink" title="短信发送组件"></a>短信发送组件</h1>
+        
+          <p class="article-more-link">
+            <a href="/blog/2018/08/07/tools/optimize/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -461,8 +371,12 @@ laravel
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="微信开发"><a href="#微信开发" class="headerlink" title="微信开发"></a>微信开发</h1><h2 id="第二步：验证消息的确来自微信服务器"><a href="#第二步：验证消息的确来自微信服务器" class="headerlink" title="第二步：验证消息的确来自微信服务器"></a>第二步：验证消息的确来自微信服务器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">function checkSignature($token) &#123;</span><br><span class="line">    $signature = $_GET[&quot;signature&quot;];</span><br><span class="line">    $timestamp = $_GET[&quot;timestamp&quot;];</span><br><span class="line">    $nonce = $_GET[&quot;nonce&quot;];</span><br><span class="line">    $tmpArr = array($token, $timestamp, $nonce);</span><br><span class="line">    sort($tmpArr, SORT_STRING);</span><br><span class="line">    $tmpStr = implode($tmpArr);</span><br><span class="line">    return sha1($tmpStr) == $signature;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 微信公众后台填写的Token</span><br><span class="line">$token = &apos;hello&apos;;</span><br><span class="line">// 如果验证正确，则返回参数echostr的内容，否则终止执行</span><br><span class="line">if(checkSignature($token)) &#123;</span><br><span class="line">    echo $_GET[&apos;echostr&apos;];</span><br><span class="line">&#125;</span><br><span class="line">exit();</span><br></pre></td></tr></table></figure>
-
+        <h1 id="微信开发"><a href="#微信开发" class="headerlink" title="微信开发"></a>微信开发</h1>
+        
+          <p class="article-more-link">
+            <a href="/blog/2018/07/27/me/wx/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -498,11 +412,12 @@ laravel
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="账号"><a href="#账号" class="headerlink" title="账号"></a>账号</h2><h2 id="公众号"><a href="#公众号" class="headerlink" title="公众号"></a>公众号</h2><p><a href="mailto:836360225@qq.com" target="_blank" rel="noopener">836360225@qq.com</a></p>
-<h2 id="公众号-1"><a href="#公众号-1" class="headerlink" title="公众号"></a>公众号</h2><p><a href="mailto:15068186501@163.com" target="_blank" rel="noopener">15068186501@163.com</a></p>
-<h2 id="小程序"><a href="#小程序" class="headerlink" title="小程序"></a>小程序</h2><p><a href="mailto:xiumao@outlook.com" target="_blank" rel="noopener">xiumao@outlook.com</a></p>
-<p><a href="mailto:1801155081@qq.com" target="_blank" rel="noopener">1801155081@qq.com</a></p>
-
+        <h1 id="账号"><a href="#账号" class="headerlink" title="账号"></a>账号</h1>
+        
+          <p class="article-more-link">
+            <a href="/blog/2018/07/27/me/account/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -538,10 +453,12 @@ laravel
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h1><h2 id="svn安装"><a href="#svn安装" class="headerlink" title="svn安装"></a>svn安装</h2><blockquote>
-<p>yum install subversion -y</p>
-</blockquote>
-
+        <h1 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h1>
+        
+          <p class="article-more-link">
+            <a href="/blog/2018/07/04/linux/yum/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
