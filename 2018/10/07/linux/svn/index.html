@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>linux | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="subversion获取指定用户时间段提交日志 svn log -r {2019-03-13}:{2019-03-14} | sed -n ‘/zhangzhenlong/,/–$/ p’  export svn  export  [-r 版本号]   (url或目录或文件的全路径)  [本地目录全路径] –username –password –no-auth-cache  svn help s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux">
+<meta property="og:url" content="b.weiyujun.cn/2018/10/07/linux/svn/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="subversion获取指定用户时间段提交日志 svn log -r {2019-03-13}:{2019-03-14} | sed -n ‘/zhangzhenlong/,/–$/ p’  export svn  export  [-r 版本号]   (url或目录或文件的全路径)  [本地目录全路径] –username –password –no-auth-cache  svn help s">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-27T02:08:04.297Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux">
+<meta name="twitter:description" content="subversion获取指定用户时间段提交日志 svn log -r {2019-03-13}:{2019-03-14} | sed -n ‘/zhangzhenlong/,/–$/ p’  export svn  export  [-r 版本号]   (url或目录或文件的全路径)  [本地目录全路径] –username –password –no-auth-cache  svn help s">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="b.weiyujun.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux/svn" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/07/linux/svn/" class="article-date">
+  <time datetime="2018-10-07T12:35:08.000Z" itemprop="datePublished">2018-10-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="subversion"><a href="#subversion" class="headerlink" title="subversion"></a>subversion</h1><h2 id="获取指定用户时间段提交日志"><a href="#获取指定用户时间段提交日志" class="headerlink" title="获取指定用户时间段提交日志"></a>获取指定用户时间段提交日志</h2><blockquote>
+<p>svn log -r {2019-03-13}:{2019-03-14} | sed -n ‘/zhangzhenlong/,/–$/ p’</p>
+</blockquote>
+<h2 id="export"><a href="#export" class="headerlink" title="export"></a>export</h2><blockquote>
+<p>svn  export  [-r 版本号]   (url或目录或文件的全路径)  [本地目录全路径] –username –password –no-auth-cache</p>
+</blockquote>
+<h2 id="svn-help"><a href="#svn-help" class="headerlink" title="svn help"></a>svn help</h2><blockquote>
+<p>svn export –help</p>
+</blockquote>
+<h2 id="创建分支或者标签"><a href="#创建分支或者标签" class="headerlink" title="创建分支或者标签"></a>创建分支或者标签</h2><blockquote>
+<p>svn copy url(trunk) url(branches/tags) -m “add 1.0 released” –username –password –no-auth-cache</p>
+</blockquote>
+<h2 id="删除分支或者标签"><a href="#删除分支或者标签" class="headerlink" title="删除分支或者标签"></a>删除分支或者标签</h2><blockquote>
+<p>svn rm url(branches/tags) -m “rm 1.0 released” –username –password –no-auth-cache</p>
+</blockquote>
+<h2 id="获取分支或者标签信息"><a href="#获取分支或者标签信息" class="headerlink" title="获取分支或者标签信息"></a>获取分支或者标签信息</h2><blockquote>
+<p>svn info url(branches/tags) –username zhangzhenlong –password zhangzhenlong0416 –no-auth-cache</p>
+</blockquote>
+<pre><code>1. 本地开发完成 提交svn
+
+2. svn copy 打tags  查看单个tag svn info url(tag) 并获取tag中的Last Changed Rev: 1
+
+3. 线上发布 svn export -r 1 url(tag)
+
+4. 第二次发布 svn copy 打tags   查看单个tag svn info url(tag) 并获取tag中的Last Changed Rev: 2
+
+5. 线上发布 svn export -r 2 url(tag)
+
+6. 回滚 查看所有tags svn info url(tags) 获取前一个tag的版本号 1  svn export -r 1 url(tags)
+
+
+
+管理员
+
+    用户 CURD
+
+    项目 CURD
+
+发布记录
+
+    测试按钮 发布代码到测试机器
+
+        自动生成版本号
+
+    上线按钮 发布代码到线上机器（下拉选版本）
+
+    回滚按钮 可以回滚到指定版本（下拉选版本）
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="b.weiyujun.cn/2018/10/07/linux/svn/" data-id="cjtqkl2ml000c32si9cmlrb6l" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/15/tools/showdoc/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          tools
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/27/tools/vscode/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">tools</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/24/todo/">todo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/24/sms/">sms</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/24/tour/">tour</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/20/tools/interface/">tools</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/14/linux/docker/">linux</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 xiumao<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

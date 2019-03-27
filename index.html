@@ -185,10 +185,10 @@
 
 
   
-    <article id="post-demo" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-tools/interface" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/03/24/demo/" class="article-date">
-  <time datetime="2019-03-24T13:44:14.000Z" itemprop="datePublished">2019-03-24</time>
+    <a href="/2019/03/20/tools/interface/" class="article-date">
+  <time datetime="2019-03-20T03:37:04.000Z" itemprop="datePublished">2019-03-20</time>
 </a>
     
   </div>
@@ -199,7 +199,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/24/demo/">demo</a>
+      <a class="article-title" href="/2019/03/20/tools/interface/">tools</a>
     </h1>
   
 
@@ -207,16 +207,344 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>demo<br>
-        
-          </p><p class="article-more-link">
-            <a href="/2019/03/24/demo/#more">Read More</a>
-          </p>
-        
+        <h2 id="面向接口编程Demo"><a href="#面向接口编程Demo" class="headerlink" title="面向接口编程Demo"></a>面向接口编程Demo</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">js</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ys</span><span class="params">($a, $b)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Jf</span> <span class="keyword">implements</span> <span class="title">js</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ys</span><span class="params">($a, $b)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"减法运算......结果为:"</span> . ($a - $b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">China</span> <span class="keyword">implements</span> <span class="title">js</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> $varl = <span class="keyword">null</span>;<span class="comment">//这里直接：public $varl = new nothingx(); 会出错。</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;varl = <span class="keyword">new</span> nothingx();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ys</span><span class="params">($a, $b)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;varl-&gt;say();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">nothingx</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">say</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"我什么运算都不做...只是为了实现&lt;font color=#990000&gt;</span></span><br><span class="line"><span class="string">        &lt;b&gt;‘耦合设计模式'&lt;/b&gt;&lt;/font&gt;...我是出来打酱油的......"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> $one;</span><br><span class="line">    <span class="keyword">private</span> $two;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($x, $y)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;one = $x;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;two = $y;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&lt;font size=20px&gt;&lt;strong&gt;面向对象程序设计——接口&lt;/font&gt;</span></span><br><span class="line"><span class="string">        &lt;/strong&gt;&lt;hr&gt;Class test初始化：&lt;br&gt;</span></span><br><span class="line"><span class="string">        属性\$one="</span> . <span class="keyword">$this</span>-&gt;one . <span class="string">"　　属性\$two="</span> . <span class="keyword">$this</span>-&gt;two . <span class="string">"&lt;hr&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">display</span><span class="params">(js $a)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"&lt;font color=#990000&gt;&lt;b&gt;用PHP接口技术实现的运算——开始运算啦:</span></span><br><span class="line"><span class="string">        &lt;/b&gt;&lt;/font&gt;&lt;hr&gt;"</span> . $a-&gt;ys(<span class="keyword">$this</span>-&gt;one, <span class="keyword">$this</span>-&gt;two) . <span class="string">"&lt;hr&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$t = <span class="keyword">new</span> test(<span class="number">103</span>, <span class="number">2</span>);</span><br><span class="line">$t1 = <span class="keyword">new</span> jf;</span><br><span class="line">$t2 = <span class="keyword">new</span> China;</span><br><span class="line"><span class="keyword">echo</span> $t-&gt;display($t1);</span><br><span class="line"><span class="keyword">echo</span> $t-&gt;display($t2);</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="b.weiyujun.cn/2019/03/24/demo/" data-id="cjtn1b78c0000f1si92fo4nr1" class="article-share-link">Share</a>
+      <a data-url="b.weiyujun.cn/2019/03/20/tools/interface/" data-id="cjtqkl2n5000r32sivwj0tjfi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux/docker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/14/linux/docker/" class="article-date">
+  <time datetime="2019-03-14T11:21:50.000Z" itemprop="datePublished">2019-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/14/linux/docker/">linux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><h3 id="官网文档"><a href="#官网文档" class="headerlink" title="官网文档"></a>官网文档</h3><blockquote>
+<p><a href="https://docs.docker.com/" target="_blank" rel="noopener">https://docs.docker.com/</a></p>
+</blockquote>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><pre><code>sudo yum install -y yum-utils   device-mapper-persistent-data   lvm2
+sudo yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum-config-manager --enable docker-ce-edge
+sudo yum-config-manager --enable docker-ce-test
+sudo yum-config-manager --disable docker-ce-edge
+sudo yum install docker-ce -y
+sudo systemctl start docker
+
+
+$ curl -L https://github.com/docker/machine/releases/download/v0.12.0/docker-machine-`uname -s`-`uname -m` &gt; /tmp/docker-machine
+$ chmod +x /tmp/docker-machine
+$ sudo mv /tmp/docker-machine /usr/local/bin/docker-machine
+
+
+linux virtualbox
+https://www.cnblogs.com/wangshuyi/p/6927113.html
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="b.weiyujun.cn/2019/03/14/linux/docker/" data-id="cjtqkl2ma000432sidv2srqzr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux/ssh_gui" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/08/linux/ssh_gui/" class="article-date">
+  <time datetime="2019-03-08T13:21:32.000Z" itemprop="datePublished">2019-03-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/08/linux/ssh_gui/">linux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="SecureCRT"><a href="#SecureCRT" class="headerlink" title="SecureCRT"></a>SecureCRT</h3><pre><code>SecureCRT 超时自动断开连接 很影响工作
+
+解决办法：
+
+Options-&gt;Session Options-&gt;Terminal-&gt;Anti-idle-&gt;勾选Send protocol NO-OP
+
+(中文版：选项-&gt;会话选项-&gt;终端-&gt;反空闲-&gt;发送协议NO-OP)
+
+后面的设置时间默认的是60秒，只要小于自动断开连接的时限就可以了。如下图所示：
+</code></pre><blockquote>
+<p><a href="https://blog.csdn.net/handsomekang/article/details/10037865" target="_blank" rel="noopener">SecureCRT 配置</a></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="b.weiyujun.cn/2019/03/08/linux/ssh_gui/" data-id="cjtqkl2mj000b32si7ddrtizo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-tools/extension" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/05/tools/extension/" class="article-date">
+  <time datetime="2019-03-05T06:23:37.000Z" itemprop="datePublished">2019-03-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/05/tools/extension/">tools</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="谷歌插件"><a href="#谷歌插件" class="headerlink" title="谷歌插件"></a>谷歌插件</h1><h2 id="Clear-Cache"><a href="#Clear-Cache" class="headerlink" title="Clear Cache"></a>Clear Cache</h2><blockquote>
+<p><a href="https://chrome.google.com/webstore/detail/cppjkneekbjaeellbfkmgnhonkkjfpdn" target="_blank" rel="noopener">Clear Cache</a></p>
+</blockquote>
+<h2 id="ShowIp"><a href="#ShowIp" class="headerlink" title="ShowIp"></a>ShowIp</h2><blockquote>
+<p><a href="https://chrome.google.com/webstore/detail/agoljmemkbciolpigpabjfkagboolkcj" target="_blank" rel="noopener">ShowIp</a></p>
+</blockquote>
+<h2 id="IP-域国家国旗"><a href="#IP-域国家国旗" class="headerlink" title="IP 域国家国旗"></a>IP 域国家国旗</h2><blockquote>
+<p><a href="https://chrome.google.com/webstore/detail/mlpapfcfoakknnhkfpencomejbcecdfp" target="_blank" rel="noopener">IP 域国家国旗</a></p>
+</blockquote>
+<h2 id="Postman"><a href="#Postman" class="headerlink" title="Postman"></a>Postman</h2><blockquote>
+<p><a href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en" target="_blank" rel="noopener">Postman</a></p>
+</blockquote>
+<h2 id="前端助手"><a href="#前端助手" class="headerlink" title="前端助手"></a>前端助手</h2><blockquote>
+<p><a href="https://chrome.google.com/webstore/detail/pkgccpejnmalmdinmhkkfafefagiiiad" target="_blank" rel="noopener">前端助手</a></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="b.weiyujun.cn/2019/03/05/tools/extension/" data-id="cjtqkl2n3000p32siama1h5xx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux/php_ext" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/22/linux/php_ext/" class="article-date">
+  <time datetime="2019-02-22T01:52:02.000Z" itemprop="datePublished">2019-02-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/22/linux/php_ext/">linux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="PHP扩展安装"><a href="#PHP扩展安装" class="headerlink" title="PHP扩展安装"></a>PHP扩展安装</h1><ul>
+<li><p>下载tgz文件 例如 <code>wget http://pecl.php.net/get/mongo-1.5.1.tgz</code></p>
+</li>
+<li><p><code>tar zxvf mongo-1.5.1.tgz</code> # 解压</p>
+</li>
+<li><p><code>cd mongo-1.5.1</code></p>
+</li>
+<li><p><code>/usr/local/php/bin/phpize</code></p>
+</li>
+<li><p><code>./configure --with-php-config=/usr/local/php/bin/php-config</code></p>
+</li>
+<li><p><code>make &amp;&amp; make install</code> # 编译安装</p>
+</li>
+<li><p><code>vim /usr/local/php/etc/php.ini</code>  #编辑，在最后一行添加下面的代码</p>
+</li>
+<li><p><code>extension=&quot;mongo.so&quot;</code></p>
+</li>
+<li><p><code>:wq!</code> #保存退出</p>
+</li>
+<li><p><code>service php-fpm reload</code> #重新加载php-fpm</p>
+</li>
+<li><p><code>phpinfo()</code> # 查看扩展安装是否成功</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="b.weiyujun.cn/2019/02/22/linux/php_ext/" data-id="cjtqkl2mh000932sitd0v2vx6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux/mysqldump" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/22/linux/mysqldump/" class="article-date">
+  <time datetime="2019-02-22T01:52:02.000Z" itemprop="datePublished">2019-02-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/22/linux/mysqldump/">linux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mysqldump"><a href="#mysqldump" class="headerlink" title="mysqldump"></a>mysqldump</h1><h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><blockquote>
+<p>-h [IP或者域名] -u [账号] -p [密码]</p>
+</blockquote>
+<h2 id="导出命令"><a href="#导出命令" class="headerlink" title="导出命令"></a>导出命令</h2><pre><code>mysqldump -h -u -p database_name table_name  &gt; target.sql
+</code></pre><h2 id="导入命令"><a href="#导入命令" class="headerlink" title="导入命令"></a>导入命令</h2><pre><code>mysql.exe -h -u -p database_name &lt; /tmp/database_name.sql
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="b.weiyujun.cn/2019/02/22/linux/mysqldump/" data-id="cjtqkl2me000832sikg0pafys" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux/rsync" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/20/linux/rsync/" class="article-date">
+  <time datetime="2019-02-20T02:31:56.000Z" itemprop="datePublished">2019-02-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/20/linux/rsync/">linux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Rsync"><a href="#Rsync" class="headerlink" title="Rsync"></a>Rsync</h2><h3 id="rsync安装"><a href="#rsync安装" class="headerlink" title="rsync安装"></a>rsync安装</h3><blockquote>
+<p>yum install -y rsync //7.4系统默认已安装，不需要额外安装</p>
+</blockquote>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><pre><code>netstat -a | grep rsync
+
+ps -aux | grep rsync
+
+rsync --daemon
+
+kill -9 pid
+</code></pre><h3 id="配置-B机器"><a href="#配置-B机器" class="headerlink" title="配置 B机器"></a>配置 B机器</h3><blockquote>
+<p>文件 /etc/rsyncd.conf</p>
+</blockquote>
+<pre><code>uid = www
+gid = www
+read only = no
+use chroot = yes
+max connections = 8   #最大连接数
+read only = no
+pid file = /var/run/rsyncd.pid
+lock file = /var/log/rsync.lock
+log file = /var/log/rsyncd.log
+address = 172.19.6.xxx //自己的地址
+hosts allow = 172.19.153.xxx #允许访问ip
+[yaf]//共享模块名称
+path = /home/wwwroot //源目录实际路径
+
+可选参数
+port 873 //默认端口
+comment = Document Root of www.aa.com //描述备注信息
+read only = yes //只读 no 可读可写则是yes
+dont compress = .gz .bz2 .tgz .zip .rar .z //排除的压缩类型
+auth users = backuper //授权登陆rsync的账户（不是系统用户）
+secrets file = /etc/rsyncd.secret //存放账户的文件
+</code></pre><blockquote>
+<p>文件 /etc/rsyncd.secret</p>
+</blockquote>
+<pre><code>backuper:123456
+</code></pre><h3 id="A机器同步至B机器"><a href="#A机器同步至B机器" class="headerlink" title="A机器同步至B机器"></a>A机器同步至B机器</h3><blockquote>
+<p>/usr/bin/rsync -avzP  /root/xx.md 172.19.6.102::yaf</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="b.weiyujun.cn/2019/02/20/linux/rsync/" data-id="cjtqkl2mi000a32sibtp1033x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -227,6 +555,11 @@
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
 
 </section>
         
@@ -244,7 +577,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
     </div>
   </div>
 
@@ -269,7 +602,11 @@
           </li>
         
           <li>
-            <a href="/2019/03/24/demo/">demo</a>
+            <a href="/2019/03/20/tools/interface/">tools</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/14/linux/docker/">linux</a>
           </li>
         
       </ul>
